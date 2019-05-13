@@ -1,3 +1,38 @@
-<p>
-  navbar works!
-</p>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="../../assets/img/logo.png" alt=""></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#siteNavbar" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="siteNavbar">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Portfolio
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" (click)='toGallery1()'>Gallery1</a>
+            <a class="dropdown-item" (click)='toGallery2()'>Gallery2</a>
+            <a class="dropdown-item" (click)='toGallery3()'>Gallery3</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)='toContact()'>Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)='toAbout()'>About</a>
+        </li>
+
+        <li class="nav-item">
+          <div *ngIf='(user|async)?.uid'>
+            <a class="nav-link" href="#" (click)="logOut()">Log Out</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
