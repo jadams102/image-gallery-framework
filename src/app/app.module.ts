@@ -12,6 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 export const firebaseConfig = {
   apiKey: config.apiKey,
@@ -24,7 +26,9 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    ContactComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
