@@ -41,5 +41,4 @@ export class ContactComponent implements OnInit {
       form.submit();
     }
   }
-
 }
