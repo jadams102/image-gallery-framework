@@ -14,6 +14,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { AboutComponent } from './about/about.component';
+import { BlogComponent } from './blog/blog.component';
 
 export const firebaseConfig = {
   apiKey: config.apiKey,
@@ -28,7 +30,9 @@ export const firebaseConfig = {
     NavbarComponent,
     HomeComponent,
     ContactComponent,
-    GalleryComponent
+    GalleryComponent,
+    AboutComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
