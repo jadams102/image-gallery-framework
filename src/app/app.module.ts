@@ -17,6 +17,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
 
 export const firebaseConfig = {
   apiKey: config.apiKey,
@@ -34,7 +35,8 @@ export const firebaseConfig = {
     GalleryComponent,
     AboutComponent,
     BlogComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
