@@ -26,6 +26,9 @@
         <li class="nav-item">
           <a class="nav-link" (click)='toAbout()'>About</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)='toBlog()'>Blog</a>
+        </li>
 
         <li class="nav-item">
           <div *ngIf='(user|async)?.uid'>
