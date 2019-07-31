@@ -18,10 +18,12 @@ import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
+import { UploadComponent } from './upload/upload.component'
 
 import { AuthenticationService } from './services/authentication.service';
 import { AuthGuard } from './services/authguard.service';
-import { UploadComponent } from './upload/upload.component'
+import { ImageService } from './services/image.service';
+import { UploadService } from './services/upload.service';
 
 export const firebaseConfig = {
   apiKey: config.apiKey,
@@ -50,7 +52,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AppRoutingModule
   ],
-  providers: [AngularFireAuth, AuthenticationService, AuthGuard],
+  providers: [AngularFireAuth, AuthenticationService, AuthGuard, ImageService, UploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
