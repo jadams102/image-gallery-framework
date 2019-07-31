@@ -19,6 +19,9 @@ import { BlogComponent } from './blog/blog.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 
+import { AuthenticationService } from './services/authentication.service';
+import { AuthGuard } from './services/authguard.service'
+
 export const firebaseConfig = {
   apiKey: config.apiKey,
   authDomain: config.authDomain,
@@ -45,7 +48,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AppRoutingModule
   ],
-  providers: [AngularFireAuth],
+  providers: [AngularFireAuth, AuthenticationService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
