@@ -20,7 +20,8 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 
 import { AuthenticationService } from './services/authentication.service';
-import { AuthGuard } from './services/authguard.service'
+import { AuthGuard } from './services/authguard.service';
+import { UploadComponent } from './upload/upload.component'
 
 export const firebaseConfig = {
   apiKey: config.apiKey,
@@ -39,7 +40,8 @@ export const firebaseConfig = {
     AboutComponent,
     BlogComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
