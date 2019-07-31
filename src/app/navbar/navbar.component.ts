@@ -35,4 +35,8 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['blog'])
   }
 
+  toGallery() {
+    this.router.navigate(['gallery'])
+  }
+
 }
