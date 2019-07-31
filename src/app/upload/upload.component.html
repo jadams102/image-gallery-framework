@@ -1,3 +1,31 @@
-<p>
-  upload works!
-</p>
+<button *ngIf='!addingImages' class="btn btn-info" (click)=toggleAddingImages()>Add Images to {{galleryName}}</button>
+<button *ngIf='addingImages' class="btn btn-info" (click)=toggleAddingImages()>Close Upload Window</button>
+<div *ngIf='addingImages' class="card">
+  <div class="card-body">
+    <div class="card-title">
+      <h2 class="heading">Upload New Images to {{galleryName}}</h2>
+    </div>
+    <div class="card-text">
+      <div *ngIf="upload">
+        <div class="progress">
+          <div class="progress-bar progress-bar-animated" [ngStyle]="{ 'width': upload?.progress + '%' }"></div>
+        </div>
+        Progress: {{upload?.progress}}% Complete
+      </div>
+      <div class="form-group">
+        <input type="file" (change)="handleFiles($event)" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" [(ngModel)]="title" placeholder="Title..." class="form-control">
+      </div>
+      <div *ngIf='galleries' class="form-group">
+        <label>Gallery</label>
+        <select class="form-control" [(ngModel)]="gallery">
+          <option *ngFor='let gallery of galleries' value="{{gallery.name}}">{{gallery.name}}</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" (click)="uploadFiles(title, description, gallery)">Upload Selected Image</button>
+    </div>
+  </div>
+</div>
