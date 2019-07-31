@@ -9,6 +9,7 @@ import { UploadService } from './upload.service';
 export class ImageService {
   private uid: string;
   gallery: AngularFireList<Upload[]>;
+  allGalleries: AngularFireList<any[]>;
 
   constructor(private afAuth: AngularFireAuth, private database: AngularFireDatabase, private uploadService: UploadService) {
     this.afAuth.authState.subscribe(auth => {
@@ -16,20 +17,30 @@ export class ImageService {
         this.uid = auth.uid;
       }
     });
-    this.gallery = this.database.list('galleries');
+    this.allGalleries = this.database.list('galleries');
+  }
+
+  setGallery(galleryPath: string) {
+    this.gallery = this.database.list('galleries/' + galleryPath + '/');
   }
 
   getGallery() {
     return this.gallery;
   }
 
-  getImageById(key: string) {
-    return this.database.object('galleries/' + key);
+  deleteGallery(galleryPath: string) {
+    const galleryToDelete = this.database.list('galleries/' + galleryPath + '/');
+    galleryToDelete.remove();
+
+  }
+
+  getImageById(galleryPath: string, key: string) {
+    return this.database.object('galleries/' + galleryPath + '/' + key);
   }
 
   removeImage(image: Upload) {
-    let imageEntry = this.getImageById(image.$key);
+    let imageEntry = this.getImageById(image.gallery.toLowerCase(), image.$key);
     imageEntry.remove();
-    this.uploadService.deleteFile(image.title);
+    this.uploadService.deleteFile(image.title, image.gallery.toLowerCase());
   }
 }

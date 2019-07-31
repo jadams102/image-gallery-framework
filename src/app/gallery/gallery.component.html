@@ -1,3 +1,17 @@
-<p>
-  gallery works!
-</p>
+<div class="gallery-section">
+  <div class="container">
+    <h1 class="gallery-title">Ga;llery 1</h1>
+    <ul id="gallery-list">
+      <li *ngFor="let image of images">
+        <a (click)='goToImageDetail(image)'><img src="{{image.url}}"></a>
+        <div *ngIf='(user|async)?.uid'>
+          <button class="btn btn-danger" (click)='deleteImage(image)'>Delete Image</button>
+        </div>
+      </li>
+    </ul>
+    <div id="upload-window" *ngIf='(user|async)?.uid'>
+      <app-upload [galleryName]='(galleryName)'></app-upload>
+    </div>
+  </div>
+</div>
+
