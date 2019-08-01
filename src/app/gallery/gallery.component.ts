@@ -21,7 +21,7 @@ export class GalleryComponent implements OnInit {
   constructor(private authService: AuthenticationService, private imageService: ImageService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.galleryName = 'TestGallery'
+    this.galleryName = 'GalleryZero'
     this.imageService.setGallery(this.galleryName.toLowerCase());
     this.imageService.getGallery().valueChanges().subscribe((data) => {
       this.imageService.getGallery().snapshotChanges().pipe(
