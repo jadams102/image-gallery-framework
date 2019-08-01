@@ -7,6 +7,8 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { BlogComponent } from './blog/blog.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { GalleryOneComponent } from './gallery-one/gallery-one.component';
+import { GalleryTwoComponent } from './gallery-two/gallery-two.component';
 import { GalleryImageDetailComponent } from './gallery-image-detail/gallery-image-detail.component';
 
 const routes: Routes = [
@@ -33,6 +35,14 @@ const routes: Routes = [
   {
     path: 'gallery',
     component: GalleryComponent
+  },  
+  {
+    path: 'galleryOne',
+    component: GalleryOneComponent
+  },  
+  {
+    path: 'galleryTwo',
+    component: GalleryTwoComponent
   },
   {
     path: ':name/:id',
