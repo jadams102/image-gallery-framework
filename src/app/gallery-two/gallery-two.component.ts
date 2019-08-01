@@ -5,6 +5,7 @@ import { Upload } from '../models/upload.model';
 import { AuthenticationService } from '../services/authentication.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-gallery-two',
@@ -18,7 +19,7 @@ export class GalleryTwoComponent implements OnInit {
   keys: String[];
   user: Observable<firebase.User>;
 
-  constructor(private authService: AuthenticationService, private imageService: ImageService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private seo: SeoService, private authService: AuthenticationService, private imageService: ImageService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.galleryName = 'GalleryTwo'
@@ -42,6 +43,13 @@ export class GalleryTwoComponent implements OnInit {
     // });
 
     this.user = this.authService.authUser();
+
+    this.seo.generateTags({
+      title: 'GalleryTwo' , 
+      description: 'This is the second new test gallery', 
+      image: 'https://instafire-app.firebaseapp.com/assets/meerkat.jpeg',
+      slug: 'gallerytwo'
+    })
   }
 
   goToImageDetail(gallery: string, key: string) {

@@ -5,6 +5,7 @@ import { Upload } from '../models/upload.model';
 import { AuthenticationService } from '../services/authentication.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-gallery',
@@ -18,7 +19,7 @@ export class GalleryComponent implements OnInit {
   keys: String[];
   user: Observable<firebase.User>;
 
-  constructor(private authService: AuthenticationService, private imageService: ImageService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private seo: SeoService, private authService: AuthenticationService, private imageService: ImageService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.galleryName = 'GalleryZero'
@@ -30,6 +31,14 @@ export class GalleryComponent implements OnInit {
           this.images = data;
           this.keys = keys.map(item => item.key);
         })
+
+    })
+    
+    this.seo.generateTags({
+      title: 'Gallery Zero', 
+      description: 'This is the original test gallery', 
+      image: 'https://instafire-app.firebaseapp.com/assets/meerkat.jpeg',
+      slug: 'galleryzero'
     })
 
     // this.imageService.getGallery().snapshotChanges().pipe(

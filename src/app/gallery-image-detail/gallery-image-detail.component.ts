@@ -4,6 +4,7 @@ import { Upload } from '../models/upload.model';
 import { ImageService } from '../services/image.service';
 import { AuthenticationService } from '../services/authentication.service';
 import { Observable } from 'rxjs';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-gallery-image-detail',
@@ -12,7 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class GalleryImageDetailComponent implements OnInit {
 
-  constructor(private authService: AuthenticationService, private imageService: ImageService, private route: ActivatedRoute, private router: Router,) { }
+  constructor(private seo: SeoService, private authService: AuthenticationService, private imageService: ImageService, private route: ActivatedRoute, private router: Router,) { }
 
   galleryName: string;
   imageKey: string;
@@ -30,6 +31,12 @@ export class GalleryImageDetailComponent implements OnInit {
       }
     )
     this.user = this.authService.authUser();
+    this.seo.generateTags({
+      title: this.galleryName + ' ' + this.imageToDisplay.name , 
+      description: 'This is the original test gallery', 
+      image: 'https://instafire-app.firebaseapp.com/assets/meerkat.jpeg',
+      slug: 'galleryzero'
+    })
   }
 
   navToGallery() {
