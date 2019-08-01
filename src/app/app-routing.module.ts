@@ -33,15 +33,15 @@ const routes: Routes = [
     component: BlogComponent
   },
   {
-    path: 'gallery',
+    path: 'galleryzero',
     component: GalleryComponent
   },  
   {
-    path: 'galleryOne',
+    path: 'galleryone',
     component: GalleryOneComponent
   },  
   {
-    path: 'galleryTwo',
+    path: 'gallerytwo',
     component: GalleryTwoComponent
   },
   {
