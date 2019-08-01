@@ -32,4 +32,14 @@ export class GalleryImageDetailComponent implements OnInit {
     this.user = this.authService.authUser();
   }
 
+  navToGallery() {
+    this.router.navigate([this.imageToDisplay.gallery.toLowerCase()])
+  }
+
+  deleteImage() {
+    this.imageService.removeImage(this.imageToDisplay.gallery, this.imageKey, this.imageToDisplay.name)
+    this.router.navigate([this.imageToDisplay.gallery]);
+    window.location.reload();
+  }
+
 }
