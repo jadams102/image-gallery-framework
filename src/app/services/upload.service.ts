@@ -30,9 +30,11 @@ export class UploadService {
     },
 
     ():any => {
-      upload.url = uploadTask.snapshot.downloadURL;
-      upload.title = upload.file.name;
-      this.saveFileData(upload);
+      uploadTask.snapshot.ref.getDownloadURL().then((url) => {
+        upload.url = url
+        upload.title = upload.file.name;
+        this.saveFileData(upload);
+      });
     }
   );
 }
