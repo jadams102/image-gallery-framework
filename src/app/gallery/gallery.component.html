@@ -5,7 +5,7 @@
       <li *ngFor="let image of images; let i = index">
         <a (click)='goToImageDetail(image.gallery, keys[i])'><img src="{{image.url}}"></a>
         <div *ngIf='(user|async)?.uid'>
-          <button class="btn btn-danger" (click)='deleteImage(image)'>Delete Image</button>
+          <button class="btn btn-danger" (click)='deleteImage(image, keys[i])'>Delete Image</button>
         </div>
       </li>
     </ul>

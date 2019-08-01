@@ -49,8 +49,8 @@ export class GalleryComponent implements OnInit {
     this.router.navigate([gallery, key]);
   }
 
-  deleteImage(image) {
-    this.imageService.removeImage(image);
+  deleteImage(image: Upload, key) {
+    this.imageService.removeImage(image.gallery, key, image.title);
   }
 
 }
