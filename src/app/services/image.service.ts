@@ -28,19 +28,13 @@ export class ImageService {
     return this.gallery;
   }
 
-  deleteGallery(galleryPath: string) {
-    const galleryToDelete = this.database.list('galleries/' + galleryPath + '/');
-    galleryToDelete.remove();
-
-  }
-
   getImageById(galleryPath: string, key: string) {
     return this.database.object('galleries/' + galleryPath + '/' + key);
   }
 
-  removeImage(image: Upload) {
-    let imageEntry = this.getImageById(image.gallery.toLowerCase(), image.$key);
+  removeImage(gallery: string, key: string, title: string) {
+    let imageEntry = this.getImageById(gallery.toLowerCase(), key);
     imageEntry.remove();
-    this.uploadService.deleteFile(image.title, image.gallery.toLowerCase());
+    this.uploadService.deleteFile(title, gallery.toLowerCase());
   }
 }
