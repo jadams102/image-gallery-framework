@@ -19,14 +19,16 @@ import { BlogComponent } from './blog/blog.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { UploadComponent } from './upload/upload.component'
+import { GalleryImageDetailComponent } from './gallery-image-detail/gallery-image-detail.component';
+import { GalleryOneComponent } from './gallery-one/gallery-one.component';
+import { GalleryTwoComponent } from './gallery-two/gallery-two.component';
 
 import { AuthenticationService } from './services/authentication.service';
 import { AuthGuard } from './services/authguard.service';
 import { ImageService } from './services/image.service';
 import { UploadService } from './services/upload.service';
-import { GalleryImageDetailComponent } from './gallery-image-detail/gallery-image-detail.component';
-import { GalleryOneComponent } from './gallery-one/gallery-one.component';
-import { GalleryTwoComponent } from './gallery-two/gallery-two.component';
+import { SeoService } from './services/seo.service';
+
 
 export const firebaseConfig = {
   apiKey: config.apiKey,
@@ -58,7 +60,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AppRoutingModule
   ],
-  providers: [AngularFireAuth, AuthenticationService, AuthGuard, ImageService, UploadService],
+  providers: [AngularFireAuth, AuthenticationService, AuthGuard, ImageService, UploadService, SeoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
