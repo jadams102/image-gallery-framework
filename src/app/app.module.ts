@@ -25,6 +25,8 @@ import { AuthGuard } from './services/authguard.service';
 import { ImageService } from './services/image.service';
 import { UploadService } from './services/upload.service';
 import { GalleryImageDetailComponent } from './gallery-image-detail/gallery-image-detail.component';
+import { GalleryOneComponent } from './gallery-one/gallery-one.component';
+import { GalleryTwoComponent } from './gallery-two/gallery-two.component';
 
 export const firebaseConfig = {
   apiKey: config.apiKey,
@@ -45,7 +47,9 @@ export const firebaseConfig = {
     FooterComponent,
     LoginComponent,
     UploadComponent,
-    GalleryImageDetailComponent
+    GalleryImageDetailComponent,
+    GalleryOneComponent,
+    GalleryTwoComponent,
   ],
   imports: [
     BrowserModule,
