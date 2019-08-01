@@ -29,7 +29,6 @@ export class GalleryComponent implements OnInit {
         )).subscribe(keys => {
           this.images = data;
           this.keys = keys.map(item => item.key);
-          console.log(this.keys);
         })
     })
 
