@@ -22,7 +22,7 @@ export class SeoService {
     this.meta.updateTag({ property: 'og:title', content: config.title });
     this.meta.updateTag({ property: 'og:description', content: config.description });
     this.meta.updateTag({ property: 'og:image', content: config.image });
-    this.meta.updateTag({ property: 'og:url', content: `https://instafire-app.firebaseapp.com/${config.slug}` });
+    this.meta.updateTag({ property: 'og:url', content: `SITE URL GOES HERE/${config.slug}` });
   }
 
 }
