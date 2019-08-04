@@ -1,0 +1,30 @@
+/* Page Wide */
+.container {
+    padding-top: 60px;
+    min-height: 90vh;
+}
+
+.card {
+    margin-top: 20px;
+    border-radius: 25px;
+    color: white;
+    background-color: rgba(42, 47, 92, 0.6)
+}
+
+textarea {
+    min-height: 600px;
+}
+
+h2 {
+    text-align: center;
+}
+
+/* Section 1 */
+
+.blog-section {
+    background-image: url('../../assets/img/blog-bg.jpg');
+    background-size: cover;
+    background-position: center right;
+    padding-top: 50px;
+    padding-bottom: 25px;
+}
