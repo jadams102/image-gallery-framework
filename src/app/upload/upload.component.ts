@@ -36,11 +36,15 @@ export class UploadComponent implements OnInit {
   }
 
   uploadFiles(title: string){
-    this.uploadService.setUploadPath(this.galleryName.toLowerCase());
-    const filesToUpload = this.files;
-      this.upload = new Upload(filesToUpload[0]);
-      this.upload.name = title;
-      this.upload.gallery = this.galleryName;
-      this.uploadService.uploadFiles(this.upload);
+    if (title == '') {
+      alert("Please Enter a Title");
+    } else {
+      this.uploadService.setUploadPath(this.galleryName.toLowerCase());
+      const filesToUpload = this.files;
+        this.upload = new Upload(filesToUpload[0]);
+        this.upload.name = title;
+        this.upload.gallery = this.galleryName;
+        this.uploadService.uploadFiles(this.upload);
+    }
   }
 }
