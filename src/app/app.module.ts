@@ -28,6 +28,7 @@ import { AuthGuard } from './services/authguard.service';
 import { ImageService } from './services/image.service';
 import { UploadService } from './services/upload.service';
 import { SeoService } from './services/seo.service';
+import { BlogAddComponent } from './blog-add/blog-add.component';
 
 
 export const firebaseConfig = {
@@ -52,6 +53,7 @@ export const firebaseConfig = {
     GalleryImageDetailComponent,
     GalleryOneComponent,
     GalleryTwoComponent,
+    BlogAddComponent,
   ],
   imports: [
     BrowserModule,
