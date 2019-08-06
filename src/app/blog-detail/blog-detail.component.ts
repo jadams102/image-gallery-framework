@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { BlogPostService } from '../services/blog-post.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-blog-detail',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogDetailComponent implements OnInit {
 
-  constructor() { }
+  postId: string;
+  postToDisplay;
+
+  constructor(private route: ActivatedRoute, private location: Location, private postService: BlogPostService) { }
 
   ngOnInit() {
+    this.route.params.forEach((urlParameters) => {
+      this.postId = urlParameters['id'];
+    });
+    this.postToDisplay = this.postService.getPostById(this.postId);
   }
 
 }
