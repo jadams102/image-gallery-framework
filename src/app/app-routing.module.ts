@@ -10,6 +10,8 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { GalleryOneComponent } from './gallery-one/gallery-one.component';
 import { GalleryTwoComponent } from './gallery-two/gallery-two.component';
 import { GalleryImageDetailComponent } from './gallery-image-detail/gallery-image-detail.component';
+import { AuthGuard } from './services/authguard.service';
+import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 
 const routes: Routes = [
   {
@@ -33,6 +35,11 @@ const routes: Routes = [
     component: BlogComponent
   },
   {
+    path: 'blog/:id',
+    component: BlogDetailComponent,
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'galleryzero',
     component: GalleryComponent
   },  
@@ -48,6 +55,7 @@ const routes: Routes = [
     path: ':name/:id',
     component: GalleryImageDetailComponent
   }
+
 ];
 
 @NgModule({
