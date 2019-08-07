@@ -30,6 +30,7 @@ import { UploadService } from './services/upload.service';
 import { SeoService } from './services/seo.service';
 import { BlogAddComponent } from './blog-add/blog-add.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
+import { BlogEditComponent } from './blog-edit/blog-edit.component';
 
 
 export const firebaseConfig = {
@@ -56,6 +57,7 @@ export const firebaseConfig = {
     GalleryTwoComponent,
     BlogAddComponent,
     BlogDetailComponent,
+    BlogEditComponent,
   ],
   imports: [
     BrowserModule,
