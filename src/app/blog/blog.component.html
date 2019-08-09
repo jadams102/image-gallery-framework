@@ -22,7 +22,7 @@
                         </div>
                         <div *ngIf='(user|async)?.uid'>
                             <button class="btn btn-warning" (click)="goToDetailPage(keys[i])">Edit</button>
-                            <button class="btn btn-danger" (click)="deletePost(key[i])">Delete</button>
+                            <button class="btn btn-danger" (click)="deletePost(keys[i])">Delete</button>
                         </div>
                     </div>
                 </div>

@@ -40,8 +40,8 @@ export class BlogComponent implements OnInit {
     })
   }
 
-  goToDetailPage(clickedPost) {
-    this.router.navigate(['blog', clickedPost.$key]);
+  goToDetailPage(key: string) {
+    this.router.navigate(['blog', key]);
   }
 
   deletePost(post) {
