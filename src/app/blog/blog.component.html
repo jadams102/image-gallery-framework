@@ -10,7 +10,7 @@
         </div>
         <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-5">
-                <div *ngFor="let post of posts" class="card">
+                <div *ngFor="let post of posts; let i = index" class="card">
                     <div class="card-body">
                         <div class="card-title">
                             <h3 class="post-title">{{post.title}}</h3>
@@ -21,8 +21,8 @@
                             <p style="white-space: pre-wrap;">{{post.body}}</p>
                         </div>
                         <div *ngIf='(user|async)?.uid'>
-                            <button class="btn btn-warning" (click)="goToDetailPage(post)">Edit</button>
-                            <button class="btn btn-danger" (click)="deletePost(post)">Delete</button>
+                            <button class="btn btn-warning" (click)="goToDetailPage(keys[i])">Edit</button>
+                            <button class="btn btn-danger" (click)="deletePost(key[i])">Delete</button>
                         </div>
                     </div>
                 </div>
