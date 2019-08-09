@@ -8,7 +8,7 @@ import { BlogPostService } from '../services/blog-post.service';
 })
 export class BlogEditComponent implements OnInit {
   @Input() selectedPost;
-  @Input() key;
+  @Input() $key;
 
   constructor(private postService: BlogPostService) { }
 
