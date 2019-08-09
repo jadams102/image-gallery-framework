@@ -16,6 +16,9 @@ import { ContactComponent } from './contact/contact.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
+import { BlogAddComponent } from './blog-add/blog-add.component';
+import { BlogDetailComponent } from './blog-detail/blog-detail.component';
+import { BlogEditComponent } from './blog-edit/blog-edit.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { UploadComponent } from './upload/upload.component'
@@ -28,9 +31,7 @@ import { AuthGuard } from './services/authguard.service';
 import { ImageService } from './services/image.service';
 import { UploadService } from './services/upload.service';
 import { SeoService } from './services/seo.service';
-import { BlogAddComponent } from './blog-add/blog-add.component';
-import { BlogDetailComponent } from './blog-detail/blog-detail.component';
-import { BlogEditComponent } from './blog-edit/blog-edit.component';
+import { BlogPostService } from './services/blog-post.service';
 
 
 export const firebaseConfig = {
@@ -66,7 +67,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AppRoutingModule
   ],
-  providers: [AngularFireAuth, AuthenticationService, AuthGuard, ImageService, UploadService, SeoService],
+  providers: [AngularFireAuth, AuthenticationService, AuthGuard, ImageService, UploadService, SeoService, BlogPostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
