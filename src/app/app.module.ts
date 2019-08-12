@@ -18,7 +18,6 @@ import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
 import { BlogAddComponent } from './blog-add/blog-add.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
-import { BlogEditComponent } from './blog-edit/blog-edit.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { UploadComponent } from './upload/upload.component'
@@ -58,7 +57,6 @@ export const firebaseConfig = {
     GalleryTwoComponent,
     BlogAddComponent,
     BlogDetailComponent,
-    BlogEditComponent,
   ],
   imports: [
     BrowserModule,
