@@ -19,7 +19,13 @@ export class BlogDetailComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.postId = urlParameters['id'];
     });
-    this.postToDisplay = this.postService.getPostById(this.postId);
+    this.postService.getPostById(this.postId).valueChanges().subscribe( data => {
+      this.postToDisplay = data;
+    });
+    console.log(this.postToDisplay)
   }
 
+  updatePost(postToUpdate, key) {
+    this.postService.updatePost(postToUpdate, key);
+  }
 }
