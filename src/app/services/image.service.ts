@@ -17,19 +17,22 @@ export class ImageService {
         this.uid = auth.uid;
       }
     });
-    this.allGalleries = this.database.list('galleries');
   }
 
   setGallery(galleryPath: string) {
     this.gallery = this.database.list('galleries/' + galleryPath + '/');
   }
 
-  getGallery() {
-    return this.gallery;
+  getGallery(galleryPath: string) {
+    return this.database.list('galleries/' + galleryPath + '/');
   }
 
   getImageById(galleryPath: string, key: string) {
     return this.database.object('galleries/' + galleryPath + '/' + key);
+  }
+
+  getThumbnail(galleryPath: string) {
+       return this.database.list('galleries/' + galleryPath + '/')
   }
 
   removeImage(gallery: string, key: string, title: string) {
