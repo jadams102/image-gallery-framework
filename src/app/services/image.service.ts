@@ -9,7 +9,6 @@ import { UploadService } from './upload.service';
 export class ImageService {
   private uid: string;
   gallery: AngularFireList<Upload[]>;
-  allGalleries: AngularFireList<any[]>;
 
   constructor(private afAuth: AngularFireAuth, private database: AngularFireDatabase, private uploadService: UploadService) {
     this.afAuth.authState.subscribe(auth => {
@@ -19,12 +18,11 @@ export class ImageService {
     });
   }
 
-  setGallery(galleryPath: string) {
-    this.gallery = this.database.list('galleries/' + galleryPath + '/');
-  }
+
 
   getGallery(galleryPath: string) {
-    return this.database.list('galleries/' + galleryPath + '/');
+    this.gallery = this.database.list('galleries/' + galleryPath + '/');
+    return this.gallery;
   }
 
   getImageById(galleryPath: string, key: string) {
