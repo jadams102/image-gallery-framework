@@ -23,9 +23,8 @@ export class GalleryTwoComponent implements OnInit {
 
   ngOnInit() {
     this.galleryName = 'GalleryTwo'
-    this.imageService.setGallery(this.galleryName.toLowerCase());
-    this.imageService.getGallery().valueChanges().subscribe((data) => {
-      this.imageService.getGallery().snapshotChanges().pipe(
+    this.imageService.getGallery(this.galleryName.toLowerCase()).valueChanges().subscribe((data) => {
+      this.imageService.getGallery(this.galleryName.toLowerCase()).snapshotChanges().pipe(
         map(actions => actions.map(a=> ({key: a.key}))
         )).subscribe(keys => {
           this.images = data;
